@@ -7,6 +7,12 @@ Features
     View the command output in real-time.
     Supports both API and Web UI for command execution.
 
+Change the "$ cat" command :
+
+    To do this, go to the line as shown on the following image :
+    ![screenshot](https://github.com/Ayoub-Tehari/websockets_CLI_intreface/assets/79996730/9f3c9fc1-b48a-4b0b-82e1-1251c2669830)
+    You can replace "cat" with what ever command you want !
+
 Tech Stack
 
     Flask: Python web framework.
