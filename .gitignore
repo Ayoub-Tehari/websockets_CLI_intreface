@@ -1,0 +1,27 @@
+# Environment files
+__pycache__
+*.pyc
+
+# IDE and OS specific
+.idea/
+.vscode/
+*.suo
+*.sln
+
+# OS temporary files
+*.tmp
+*.log
+*.err
+
+# Text editor backups
+*.bak
+*.swp
+
+# Coverage reports
+coverage/
+
+# Documentation
+docs/build/
+
+# Virtual environment
+venv/
