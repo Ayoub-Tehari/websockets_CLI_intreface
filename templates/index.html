@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Interface de commande interactive</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Connexion à Socket.IO
+      var socket = io('ws://127.0.0.1:5000/'); // Replace with your server address
+
+      // Envoyer la commande à l'API
+      $('#run-command').click(function() {
+        var command = $('#command-input').val();
+        socket.emit('exec_cmd', command); // Emit event named 'exec_cmd'
+      });
+
+      // Afficher la sortie du programme
+      socket.on('exec_output', function(output) {
+        $('#output').append('<pre>' + output + '</pre>');
+      });
+
+      // Gérer les erreurs
+      socket.on('connect_error', function(err) {
+        console.error('Erreur Socket.IO:', err);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Interface de commande interactive</h1>
+  <input type="text" id="command-input" placeholder="Entrez votre commande">
+  <button id="run-command">Exécuter</button>
+  <div id="output">
+    
+  </div>
+</body>
+</html>
